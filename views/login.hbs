@@ -1,0 +1,71 @@
+{{#if alert}}
+<div class="alert alert-{{success}} alert-dismissible fade show" role="alert">
+{{alert}}
+<button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+  <style>
+  *{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+  background-image: url("./bgLogin.jpg");
+}
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin: 5% auto;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  background: white;
+}
+.userName, .passWord{
+  width: 70%;
+  font-size: 30px;
+}
+input{
+  font-size: 15px;
+  margin-bottom: 25px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+button{
+  cursor: pointer;
+  width: 50%;
+  font-size: 15px;
+  background: linear-gradient(to right,#00ced1, #ff00ff);
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+}
+p{
+  font-size: 12px;
+}
+a{
+  text-decoration: none;
+  color: blue;
+}
+.navbar{
+  display: none;
+}
+</style>
+    <form action="/login" method="POST" novalidate>
+<div class="login">
+      <h1>Login</h1>
+      <div class="userName">
+        <input type="text" placeholder="Email" name="email">
+      </div>
+      <div class="passWord">
+        <input type="password" placeholder="Password" name="password">
+      </div><br>
+      <button type="submit">Login</button>
+      <br><br>
+      <p class="forgot">Forgot <a href="">Password?</a></p>
+      <p class="new">Don't have an account? <a href="/signup">Sign Up</a></p>
+    </div>
+    </form>

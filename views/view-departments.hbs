@@ -1,0 +1,22 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col" class="text-end">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.dept_id}}</th>
+      <td>{{this.dept_name}}</td>
+      <td>{{this.description}}</td>
+      <td class="text-end">
+        <a href="/viewDepartment/{{this.dept_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i>View</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

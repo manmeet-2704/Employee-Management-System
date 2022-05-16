@@ -1,0 +1,47 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View Employee</li>
+  </ol>
+</nav>
+<style>
+  img{
+    border-radius: 50%;
+    width: 300px;
+    height: auto;
+  }
+</style>
+{{#each rows}}
+{{#if this.image}}
+<img src="{{this.image}}" class="rounded mx-auto d-block" alt="Employee">
+{{else}}
+<img src="/public/employee.png" class="rounded mx-auto d-block" alt="Employee Profile">
+{{/if}}
+<div class="col-6"><h1>{{this.emp_name}}</h1></div>
+{{/each}}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Department ID</th>
+      <th scope="col">Project ID</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.emp_id}}</th>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.dept_id}}</td>
+      <td>{{this.project_id}}</td>
+      <td>{{this.salary}}</td>
+      <td>{{this.age}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

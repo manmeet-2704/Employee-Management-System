@@ -1,0 +1,35 @@
+{{#if alert}}
+{{#each rows}}
+<div class="col-6"><h1>{{this.project_name}} Project</h1></div>
+<p class="fs-5">{{this.description}}</p>
+{{/each}}
+<br>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{alert}}
+<button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{else}}
+{{#each rows}}
+<div class="col-6"><h1>{{this.project_name}} Project</h1></div>
+<p class="fs-5">{{this.description}}</p>
+<p class="fs-6">List of Employees working on this Project</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col" class="text-end">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">
+        {{this.emp_name}}
+      </td>
+      <td class="text-end">
+        <a href="/viewemployee/{{this.emp_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i>View</a>
+    </tr>
+  </tbody>
+</table>
+{{/each}}
+    {{/if}}
+

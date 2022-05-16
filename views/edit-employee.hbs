@@ -1,0 +1,18 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Employee</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success" role="alert">
+{{alert}}
+</div>
+{{/if}}
+
+{{#each rows}} 
+<form class="row g-3 needs validation" method="POST" action="/editemployee/{{this.emp_id}}" novalidate>
+  {{> employee-form}}
+</form>
+{{/each}}

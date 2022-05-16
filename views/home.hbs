@@ -1,0 +1,44 @@
+
+{{#if removedEmployee}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+Employee removed Successfully!
+<button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<div class="row">
+  <div class="col-6"><h1>Employees</h1></div>
+  <div class="col-6 d-flex justify-content-end" ><a href="/addemployee" type="button" class="btn btn-primary align-self-center">+ Add Employee</a></div>
+</div>
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Department ID</th>
+      <th scope="col">Project ID</th>
+      <th scope="col" class="text-end">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.emp_id}}</th>
+      <td>{{this.emp_name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.dept_id}}</td>
+      <td>{{this.project_id}}</td>
+      <td class="text-end">
+        <a href="/viewemployee/{{this.emp_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-eye"></i>View</a>
+        <a href="/editemployee/{{this.emp_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>Edit</a>
+        <a href="/deleteemployee/{{this.emp_id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-trash3"></i>Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
